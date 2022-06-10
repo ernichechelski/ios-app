@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct AppApp: App {
+struct MainApp: App {
+
+    @StateObject var appManager = AppManager()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigatorContainer()
+                .environmentObject(appManager.navigator)
         }
     }
 }
