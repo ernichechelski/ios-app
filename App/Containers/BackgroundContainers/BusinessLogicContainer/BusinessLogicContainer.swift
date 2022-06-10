@@ -5,7 +5,7 @@
 //  Created by Ernest Chechelski on 10/06/2022.
 //
 
-import Foundation
+import Swinject
 
 enum BusinessLogicContainer: ContainerBuilder {
     static func build(in container: Container) {

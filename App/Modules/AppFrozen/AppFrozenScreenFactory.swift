@@ -12,6 +12,7 @@ import App_Design_System
 enum AppFrozenScreenFactoryEvents {
     enum RootEvent {
         case onAppUnlocked
+        case onDetailsTapped
     }
 }
 
@@ -35,6 +36,11 @@ final class DefaultAppFrozenScreenFactory: AppFrozenScreenFactory {
                 Text("Unlock the app")
             }
             .buttonStyle(PrimaryButton())
+            Button {
+                onEvent?(.onDetailsTapped)
+            } label: {
+                Text("Why the app is locked?")
+            }
         }.asIdentifableScreen()
     }
 }

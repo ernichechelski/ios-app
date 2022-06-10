@@ -24,7 +24,20 @@ final class AppFrozenCoordinator: BaseCoordinator {
             screenFactory.makeRoot { [weak self] event in
                 switch event {
                 case .onAppUnlocked: self?.navigator.dismiss()
+                case .onDetailsTapped: self?.goToDetails()
                 }
+            }
+        }
+    }
+}
+
+import SwiftUI
+
+extension AppFrozenCoordinator {
+    func goToDetails() {
+        innerNavigator?.push {
+            VStack {
+                Text("Here you will find some details about why you cannot use the app")
             }
         }
     }
